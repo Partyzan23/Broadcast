@@ -27,6 +27,14 @@ class MyReceiver : BroadcastReceiver() {
             Intent.ACTION_BATTERY_LOW -> {
                 Toast.makeText(context, "Low battery", Toast.LENGTH_SHORT).show()
             }
+            "loaded" -> {
+                val percent = intent.getIntExtra("percent", 0)
+                Toast.makeText(
+                    context,
+                    "Percent: $percent",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
